@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MP2_Gary_Mathis</title>
+</head>
+<body>
+  <p id="resultat"></p>
+
+  <script>
+    var url = prompt("Entre une URL :");
+    var testUrl = url.toLowerCase();
+
+    if (!testUrl.startsWith("http://") && !testUrl.startsWith("https://")) {
+      url = "http://" + url;
+    }
+
+    var nom = url.split("www.")[1];
+    if (nom) nom = nom.split("/")[0];
+    else nom = url;
+
+    document.getElementById("resultat").innerHTML = '<a href="' + url + '">' + nom + '</a>';
+  </script>
+</body>
+</html>

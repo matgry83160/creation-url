@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MP1_Gary_Mathis</title>
+</head>
+<body>
+  <h1>Fusion de texte</h1>
+
+  <input type="text" id="texteUtilisateur" placeholder="Écris quelque chose">
+  <button onclick="fusionner()">Fusionner</button>
+
+  <p id="resultat"></p>
+
+  <script>
+    function fusionner() {
+      var utilisateur = document.getElementById("texteUtilisateur").value;
+      var autreTexte = " Bienvenue sur ma page !";
+      var fusion = utilisateur + autreTexte;
+      document.getElementById("resultat").innerHTML = fusion;
+    }
+  </script>
+</body>
+</html>
