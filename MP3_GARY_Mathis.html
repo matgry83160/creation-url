@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MP3_Gary_Mathis</title>
+</head>
+<body>
+  <h1>Calculatrice de pourboire</h1>
+  <p id="resultat"></p>
+
+  <script>
+    function calculPourboire(montant, pourcentage = 10, afficher = false) {
+      var pourboire = montant * (pourcentage / 100);
+      if (afficher) {
+        console.log("Montant : " + montant + " €");
+        console.log("Pourboire : " + pourboire + " €");
+      }
+      return pourboire;
+    }
+
+    var montant = prompt("Montant de la commande ?");
+    var pourcentage = prompt("Pourcentage du pourboire ? (laisser vide pour 10%)");
+
+    if (!pourcentage) pourcentage = 10;
+
+    var tip = calculPourboire(montant, pourcentage, true);
+
+    document.getElementById("resultat").innerHTML =
+      "Pour " + montant + " €, le pourboire est " + tip + " € (" + pourcentage + "%)";
+  </script>
+</body>
+</html>
